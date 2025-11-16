@@ -24,8 +24,7 @@ st.set_page_config(
 st.markdown("""
     <style>
     .main-header {
-        font-size: 48px !important;
-
+        font-size: 2.5rem;
         font-weight: bold;
         color: #1f77b4;
         text-align: center;
@@ -35,7 +34,6 @@ st.markdown("""
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 1.5rem;
         border-radius: 10px;
-        border: black 3px solid;
         color: white;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -188,11 +186,6 @@ with st.sidebar:
         (float(df["Process temperature [K]"].min()), float(df["Process temperature [K]"].max()))
     )
     
-    risk_filter = st.selectbox(
-        "**Filter Rekomendasi**",
-        ["Semua", "✅ Aman", "⚙️ Perawatan Sedang", "🚨 Perawatan Berat"]
-    )
-    
     st.markdown("---")
     st.markdown("### 📈 Model Info")
     st.info(f"""
@@ -222,26 +215,8 @@ if page == "🏠 Dashboard":
         st.markdown("""
         <div class="metric-card">
             <h2 style="margin:0;">🏭</h2>
-            <h1 style="
-            margin:0.5rem 0;
-            color: white;
-            text-shadow:
-                -2px -2px 0 #000,
-                2px -2px 0 #000,
-                -2px 2px 0 #000,
-                2px 2px 0 #000;
-        ">{:,}</h1>
-            <p style="
-            margin:0;
-            color: white;
-            font-size: 1rem;
-            text-shadow:
-                -1px -1px 0 #000,
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
-        ">Total Mesin</p>
-        </div>
+            <h1 style="margin:0.5rem 0;">{:,}</h1>
+            <p style="margin:0;">Total Mesin</p>
         </div>
         """.format(len(df)), unsafe_allow_html=True)
     
@@ -250,25 +225,8 @@ if page == "🏠 Dashboard":
         st.markdown("""
         <div class="metric-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
             <h2 style="margin:0;">🚨</h2>
-            <h1 style="
-            margin:0.5rem 0;
-            color: white;
-            text-shadow:
-                -2px -2px 0 #000,
-                2px -2px 0 #000,
-                -2px 2px 0 #000,
-                2px 2px 0 #000;
-        ">{:,}</h1>
-            <p style="
-            margin:0;
-            color: white;
-            font-size: 1rem;
-            text-shadow:
-                -1px -1px 0 #000,
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
-        ">Risiko Berat</p>
+            <h1 style="margin:0.5rem 0;">{:,}</h1>
+            <p style="margin:0;">Risiko Berat</p>
         </div>
         """.format(berat), unsafe_allow_html=True)
     
@@ -277,26 +235,8 @@ if page == "🏠 Dashboard":
         st.markdown("""
         <div class="metric-card" style="background: linear-gradient(135deg, #ffa751 0%, #ffe259 100%);">
             <h2 style="margin:0;">⚙️</h2>
-            <h1 style="
-            margin:0.5rem 0;
-            color: white;
-            text-shadow:
-                -2px -2px 0 #000,
-                2px -2px 0 #000,
-                -2px 2px 0 #000,
-                2px 2px 0 #000;
-        ">{:,}</h1>
-            <p style="
-            margin:0;
-            color: white;
-            font-size: 1rem;
-            text-shadow:
-                -1px -1px 0 #000,
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
-        ">Risiko Sedang</p>
-        </div>
+            <h1 style="margin:0.5rem 0;">{:,}</h1>
+            <p style="margin:0;">Risiko Sedang</p>
         </div>
         """.format(sedang), unsafe_allow_html=True)
     
@@ -305,26 +245,8 @@ if page == "🏠 Dashboard":
         st.markdown("""
         <div class="metric-card" style="background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);">
             <h2 style="margin:0;">✅</h2>
-            <h1 style="
-            margin:0.5rem 0;
-            color: white;
-            text-shadow:
-                -2px -2px 0 #000,
-                2px -2px 0 #000,
-                -2px 2px 0 #000,
-                2px 2px 0 #000;
-        ">{:,}</h1>
-            <p style="
-            margin:0;
-            color: white;
-            font-size: 1rem;
-            text-shadow:
-                -1px -1px 0 #000,
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
-        ">Aman</p>
-        </div>
+            <h1 style="margin:0.5rem 0;">{:,}</h1>
+            <p style="margin:0;">Aman</p>
         </div>
         """.format(aman), unsafe_allow_html=True)
     
